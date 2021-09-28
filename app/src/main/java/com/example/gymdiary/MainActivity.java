@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(preset.get(j));
     }
 
-
+// Clear will be removed in final version
     public void clearPressed(View v){
         diary.clear();
         i = 0;
