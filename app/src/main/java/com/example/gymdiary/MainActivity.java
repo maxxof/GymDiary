@@ -106,4 +106,4 @@ public class MainActivity extends AppCompatActivity {
         TextView diaryTV = findViewById(R.id.diaryTextView);
         diaryTV.setText("Diary:");
     }
-} // lol
+}
