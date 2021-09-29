@@ -46,6 +46,10 @@ public class Exercise {
         this.weight = weight;
     }
 
+    //comment 1
+    //comment 2
+    //commment 3
+
     public void increaseWeight(){
         this.weight += step;
     }
