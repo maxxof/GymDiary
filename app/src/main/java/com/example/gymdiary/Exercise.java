@@ -61,5 +61,5 @@ public class Exercise {
 
     public String diaryString(){
         return this.name + " " + this.reps + " reps " + this.weight + " kg.";
-    }
+    } // moimoi
 }
