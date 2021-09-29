@@ -9,6 +9,7 @@ public class Exercise {
 
     public Exercise(String name, String units, int step, int reps, int weight) {
         this.name = name;
+        // units is useless we only do kg for now, if we have time we add more units
         this.units = units;
         this.step = step;
         this.reps = reps;
