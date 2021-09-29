@@ -15,10 +15,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> diary = new ArrayList();
     ArrayList<String> preset = new ArrayList();
 
-
     Exercise exercise1 = new Exercise("Deadlift", "kg", 5, 5, 100);
-
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,8 +31,6 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
-
 
         TextView tv = findViewById(R.id.editTextEx1name);
         tv.setText(exercise1.getName());
@@ -111,4 +106,4 @@ public class MainActivity extends AppCompatActivity {
         TextView diaryTV = findViewById(R.id.diaryTextView);
         diaryTV.setText("Diary:");
     }
-}
+} // lol
