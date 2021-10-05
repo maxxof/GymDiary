@@ -99,11 +99,10 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(preset.get(j));
     }
 
-// Clear will be removed in final version
     public void clearPressed(View v){
         diary.clear();
         i = 0;
         TextView diaryTV = findViewById(R.id.diaryTextView);
         diaryTV.setText("Diary:");
     }
-}
+} //123
