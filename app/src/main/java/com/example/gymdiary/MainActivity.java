@@ -1,5 +1,6 @@
 package com.example.gymdiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -31,6 +32,8 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        Intent intentDay1 = getIntent();
 
         TextView tv = findViewById(R.id.editTextEx1name);
         tv.setText(exercise1.getName());
