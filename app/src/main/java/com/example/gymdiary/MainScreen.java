@@ -2,6 +2,7 @@ package com.example.gymdiary;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
@@ -88,5 +89,11 @@ public class MainScreen extends AppCompatActivity {
         } else if (buttonDay1.getVisibility() == v.VISIBLE) {
             buttonDay1.setVisibility(v.INVISIBLE);
         }
+    }
+
+    public void buttonDay1Click(View view3) {
+        Intent intentDay1 = new Intent(this, MainActivity.class);
+        startActivity(intentDay1);
+
     }
 }
