@@ -41,7 +41,7 @@ public class MainScreen extends AppCompatActivity {
         buttonDay5.setVisibility(v.INVISIBLE);
         buttonDay6.setVisibility(v.INVISIBLE);
     }
-    }
+    
 
     public void plusClick(View view1) {
         if (buttonDay1.getVisibility() == v.INVISIBLE) {
@@ -75,5 +75,18 @@ public class MainScreen extends AppCompatActivity {
         }
     }
     public void minusClick(View view2) {
-    
+        if (buttonDay6.getVisibility() == v.VISIBLE) {
+            buttonDay6.setVisibility(v.INVISIBLE);
+        } else if (buttonDay5.getVisibility() == v.VISIBLE) {
+            buttonDay5.setVisibility(v.INVISIBLE);
+        } else if (buttonDay4.getVisibility() == v.VISIBLE) {
+            buttonDay4.setVisibility(v.INVISIBLE);
+        } else if (buttonDay3.getVisibility() == v.VISIBLE) {
+            buttonDay3.setVisibility(v.INVISIBLE);
+        } else if (buttonDay2.getVisibility() == v.VISIBLE) {
+            buttonDay2.setVisibility(v.INVISIBLE);
+        } else if (buttonDay1.getVisibility() == v.VISIBLE) {
+            buttonDay1.setVisibility(v.INVISIBLE);
+        }
+    }
 }
