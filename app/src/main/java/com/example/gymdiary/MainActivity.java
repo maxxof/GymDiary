@@ -1,5 +1,6 @@
 package com.example.gymdiary;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -10,10 +11,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    int i = 0;
-    int j = 0;
-    ArrayList<String> diary = new ArrayList();
-    ArrayList<String> preset = new ArrayList();
+   int i = 0;
+   int j = 0;
+   public static final ArrayList<String> diary = new ArrayList();
+   public static final ArrayList<String> preset = new ArrayList();
 
     Exercise exercise1 = new Exercise("Deadlift", "kg", 5, 5, 100);
 
@@ -31,6 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
 
         TextView tv = findViewById(R.id.editTextEx1name);
         tv.setText(exercise1.getName());
@@ -71,10 +73,8 @@ public class MainActivity extends AppCompatActivity {
         EditText exerET = (EditText) findViewById(R.id.editTextEx1name);
         exercise1.setName(exerET.getText().toString());
 
-        diary.add(exercise1.diaryString());
 
-        TextView diaryTV = findViewById(R.id.diaryTextView);
-        diaryTV.append("\n" + diary.get(i));
+        diary.add(exercise1.diaryString());
 
         i++;
 
@@ -105,5 +105,14 @@ public class MainActivity extends AppCompatActivity {
         i = 0;
         TextView diaryTV = findViewById(R.id.diaryTextView);
         diaryTV.setText("Diary:");
-    } // ijijuhduiqhd
+    }
+
+    public void openTracker(View v) {
+        Intent intent = new Intent(this, Tracker.class);
+        intent.putStringArrayListExtra("DIARY", diary);
+
+        startActivity(intent);
+
+
+    }
 }

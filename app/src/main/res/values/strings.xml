@@ -1,4 +1,9 @@
 <resources>
     <string name="app_name">Gym Diary</string>
     <string name="userLabel">User:</string>
+    <string name="tracker">Tracker</string>
+    <string name="back">Back</string>
+    <string name="edit">Edit</string>
+    <string name="textview">TextView</string>
+    <string name="diary">Diary:</string>
 </resources>
