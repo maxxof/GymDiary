@@ -2,15 +2,13 @@ package com.example.gymdiary;
 
 public class Exercise {
     private String name;
-    private String units;
-    private int step;
+    private double step;
     private int reps;
-    private int weight;
+    private double weight;
 
-    public Exercise(String name, String units, int step, int reps, int weight) {
+    public Exercise(String name, double step, int reps, double weight) {
         this.name = name;
         // units is useless we only do kg for now, if we have time we add more units
-        this.units = units;
         this.step = step;
         this.reps = reps;
         this.weight = weight;
@@ -21,16 +19,10 @@ public class Exercise {
     public void setName(String name) {
         this.name = name;
     }
-    public String getUnits() {
-        return units;
-    }
-    public void setUnits(String units) {
-        this.units = units;
-    }
-    public int getStep() {
+    public double getStep() {
         return step;
     }
-    public void setStep(int step) {
+    public void setStep(double step) {
         this.step = step;
     }
     public int getReps() {
@@ -39,10 +31,10 @@ public class Exercise {
     public void setReps(int reps) {
         this.reps = reps;
     }
-    public int getWeight() {
+    public double getWeight() {
         return weight;
     }
-    public void setWeight(int weight) {
+    public void setWeight(double weight) {
         this.weight = weight;
     }
 

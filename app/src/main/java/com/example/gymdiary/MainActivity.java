@@ -11,15 +11,24 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-    int i = 0;
-    int j = 0;
-    ArrayList<String> diary = new ArrayList();
-    ArrayList<String> preset = new ArrayList();
+    private TextView textViewStepValue;
+    private TextView textViewStep;
+    private double step;
+    private double i = 0;
+    private int j = 0;
+    public static final ArrayList<String> diary = new ArrayList();
+    public static final ArrayList<String> preset = new ArrayList();
 
-    Exercise exercise1 = new Exercise("Deadlift", "kg", 5, 5, 100);
+    Exercise exercise1 = new Exercise("Deadlift", 2.5, 5, 100);
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+
+        Intent intentDay1 = getIntent();
         preset.add(0, "Deadlift");
         preset.add(1, "Bench Press");
         preset.add(2, "Squats");
@@ -30,31 +39,30 @@ public class MainActivity extends AppCompatActivity {
         preset.add(7, "Lat Pulldown");
         preset.add(8, "Crunch");
 
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-
-        Intent intentDay1 = getIntent();
 
         TextView tv = findViewById(R.id.editTextEx1name);
         tv.setText(exercise1.getName());
 
         TextView tv2 = findViewById(R.id.ex1weight);
-        tv2.setText(Integer.toString(exercise1.getWeight()) + " " + exercise1.getUnits());
+        tv2.setText(Double.toString(exercise1.getWeight()));
 
         TextView tv3 = findViewById(R.id.ex1reps);
         tv3.setText(Integer.toString(exercise1.getReps()));
+
+
+
     }
 
     public void wPlusPressed(View v){
         exercise1.increaseWeight();
         TextView tv = findViewById(R.id.ex1weight);
-        tv.setText(Integer.toString(exercise1.getWeight()) + " " + exercise1.getUnits());
+        tv.setText(Double.toString(exercise1.getWeight()));
     }
 
     public void wMinusPressed(View v){
         exercise1.decreaseWeight();
         TextView tv = findViewById(R.id.ex1weight);
-        tv.setText(Integer.toString(exercise1.getWeight()) + " " + exercise1.getUnits());
+        tv.setText(Double.toString(exercise1.getWeight()));
     }
 
     public void rPlusPressed(View v){
@@ -70,16 +78,14 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    public void ex1addPressed(View v){
+      public void ex1addPressed(View v){
         EditText exerET = (EditText) findViewById(R.id.editTextEx1name);
         exercise1.setName(exerET.getText().toString());
 
         diary.add(exercise1.diaryString());
 
-        TextView diaryTV = findViewById(R.id.diaryTextView);
-        diaryTV.append("\n" + diary.get(i));
-
         i++;
+
 
     }
 
@@ -102,11 +108,34 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(preset.get(j));
     }
 
-// Clear will be removed in final version
-    public void clearPressed(View v){
+    /* public void clearPressed(View v){
         diary.clear();
         i = 0;
         TextView diaryTV = findViewById(R.id.diaryTextView);
         diaryTV.setText("Diary:");
+    } */
+    public void stepUpPressed(View v) {
+        step = exercise1.getStep();
+        exercise1.setStep(step + 0.5);
+        textViewStepValue.setText(Double.toString(exercise1.getStep()));
+    }
+    public void stepDownPressed(View v) {
+        if (exercise1.getStep() > 0.5) {
+            step = exercise1.getStep();
+            exercise1.setStep(step - 0.5);
+            textViewStepValue.setText(Double.toString(exercise1.getStep()));
+        } else
+            step = 0.5;
+    }
+    public void openTracker(View v) {
+        Intent intent = new Intent(this, Tracker.class);
+        intent.putStringArrayListExtra("DIARY", diary);
+
+        startActivity(intent);
+    }
+    public void goBack(View v) {
+        Intent intentMainScreen = new Intent(this, MainScreen.class);
+        startActivity(intentMainScreen);
+
     }
 }
