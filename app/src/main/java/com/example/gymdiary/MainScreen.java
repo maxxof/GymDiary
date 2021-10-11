@@ -23,6 +23,7 @@ public class MainScreen extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
+        Intent intentMainScreen = getIntent();
 
         SharedPreferences sh = getSharedPreferences("MySharedPreferences", MODE_PRIVATE);
         floatingButtonPlus = findViewById(R.id.floatingButtonPlus);
@@ -42,39 +43,33 @@ public class MainScreen extends AppCompatActivity {
         buttonDay5.setVisibility(v.INVISIBLE);
         buttonDay6.setVisibility(v.INVISIBLE);
     }
-    
+
 
     public void plusClick(View view1) {
         if (buttonDay1.getVisibility() == v.INVISIBLE) {
             buttonDay1.setText(et.getText().toString());
             buttonDay1.setVisibility(v.VISIBLE);
-        } else
-
-        if (buttonDay2.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay2.getVisibility() == v.INVISIBLE) {
             buttonDay2.setText(et.getText().toString());
             buttonDay2.setVisibility(v.VISIBLE);
-        } else
-        if (buttonDay3.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay3.getVisibility() == v.INVISIBLE) {
             buttonDay3.setText(et.getText().toString());
             buttonDay3.setVisibility(v.VISIBLE);
-        } else
-        if (buttonDay3.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay3.getVisibility() == v.INVISIBLE) {
             buttonDay3.setText(et.getText().toString());
             buttonDay3.setVisibility(v.VISIBLE);
-        } else
-        if (buttonDay4.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay4.getVisibility() == v.INVISIBLE) {
             buttonDay4.setText(et.getText().toString());
             buttonDay4.setVisibility(v.VISIBLE);
-        } else
-        if (buttonDay5.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay5.getVisibility() == v.INVISIBLE) {
             buttonDay5.setText(et.getText().toString());
             buttonDay5.setVisibility(v.VISIBLE);
-        } else
-        if (buttonDay6.getVisibility() == v.INVISIBLE) {
+        } else if (buttonDay6.getVisibility() == v.INVISIBLE) {
             buttonDay6.setText(et.getText().toString());
             buttonDay6.setVisibility(v.VISIBLE);
         }
     }
+
     public void minusClick(View view2) {
         if (buttonDay6.getVisibility() == v.VISIBLE) {
             buttonDay6.setVisibility(v.INVISIBLE);
@@ -91,9 +86,34 @@ public class MainScreen extends AppCompatActivity {
         }
     }
 
-    public void buttonDay1Click(View view3) {
+    public void buttonDay1Click(View view) {
         Intent intentDay1 = new Intent(this, MainActivity.class);
         startActivity(intentDay1);
 
+    }
+
+    public void buttonDay2Click(View view) {
+        Intent intentDay2 = new Intent(this, MainActivity.class);
+        startActivity(intentDay2);
+    }
+
+    public void buttonDay3Click(View view) {
+        Intent intentDay3 = new Intent(this, MainActivity.class);
+        startActivity(intentDay3);
+    }
+
+    public void buttonDay4Click(View view) {
+        Intent intentDay4 = new Intent(this, MainActivity.class);
+        startActivity(intentDay4);
+    }
+
+    public void buttonDay5Click(View view) {
+        Intent intentDay5 = new Intent(this, MainActivity.class);
+        startActivity(intentDay5);
+    }
+
+    public void buttonDay6Click(View view) {
+        Intent intentDay6 = new Intent(this, MainActivity.class);
+        startActivity(intentDay6);
     }
 }

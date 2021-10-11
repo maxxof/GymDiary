@@ -10,6 +10,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymDiary">
         <activity
+            android:name=".Tracker"
+            android:exported="true" />
+        <activity
             android:name=".MainActivity"
             android:exported="true" />
         <activity
