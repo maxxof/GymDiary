@@ -1,6 +1,8 @@
 package com.example.gymdiary;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -11,10 +13,16 @@ import androidx.appcompat.app.AppCompatActivity;
 import java.util.ArrayList;
 
 public class MainActivity extends AppCompatActivity {
-   int i = 0;
+
+    SharedPreferences sp;
+    TextView ex1weight;
+    String weightStr;
+
+    int i = 0;
    int j = 0;
-   public static final ArrayList<String> diary = new ArrayList();
+   public static ArrayList<String> diary = new ArrayList();
    public static final ArrayList<String> preset = new ArrayList();
+
 
     Exercise exercise1 = new Exercise("Deadlift", "kg", 5, 5, 100);
 
@@ -42,6 +50,13 @@ public class MainActivity extends AppCompatActivity {
 
         TextView tv3 = findViewById(R.id.ex1reps);
         tv3.setText(Integer.toString(exercise1.getReps()));
+
+        diary.removeAll(diary);
+    }
+
+    public void onPause() {
+        super.onPause();
+
     }
 
     public void wPlusPressed(View v){
@@ -99,13 +114,6 @@ public class MainActivity extends AppCompatActivity {
         tv.setText(preset.get(j));
     }
 
-// Clear will be removed in final version
-    public void clearPressed(View v){
-        diary.clear();
-        i = 0;
-        TextView diaryTV = findViewById(R.id.diaryTextView);
-        diaryTV.setText("Diary:");
-    }
 
     public void openTracker(View v) {
         Intent intent = new Intent(this, Tracker.class);
@@ -113,6 +121,10 @@ public class MainActivity extends AppCompatActivity {
 
         startActivity(intent);
 
+    }
+    @Override
+    public void onStop() {
+        super.onStop();
 
     }
 }
