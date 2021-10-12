@@ -117,18 +117,18 @@
         app:layout_constraintStart_toStartOf="@+id/ex1minusReps" />
 
     <Button
-        android:id="@+id/clrButton"
+        android:id="@+id/trackerButton"
         android:layout_width="128dp"
         android:layout_height="32dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="27dp"
         android:insetTop="0dp"
         android:insetBottom="0dp"
-        android:onClick="clearPressed"
-        android:text="Clear"
+        android:onClick="openTracker"
+        android:text="Tracker"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.091"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView2"
         tools:ignore="TouchTargetSizeCheck" />
 
     <EditText
@@ -178,34 +178,5 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         tools:ignore="TouchTargetSizeCheck" />
-
-    <ScrollView
-        android:id="@+id/scrollView2"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="48dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ex1plusWeight">
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <TextView
-                android:id="@+id/diaryTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Diary:"
-                android:textAlignment="textStart"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-        </LinearLayout>
-    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
