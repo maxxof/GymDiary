@@ -57,6 +57,28 @@ public class Tracker extends AppCompatActivity {
 
     }
     // Siirtyy takaisin sessioniin
+    public void goBack(View v) {
+        if (getIntent().getStringExtra("from").equals("Day1Activity")){
+            Intent intentDay1 = new Intent(this, Day1Activity.class);
+            startActivity(intentDay1);
+        } else if (getIntent().getStringExtra("from").equals("Day2Activity")){
+            Intent intentDay2 = new Intent(this, Day2Activity.class);
+            startActivity(intentDay2);
+        } else if (getIntent().getStringExtra("from").equals("Day3Activity")){
+            Intent intentDay3 = new Intent(this, Day3Activity.class);
+            startActivity(intentDay3);
+        } else if (getIntent().getStringExtra("from").equals("Day4Activity")) {
+            Intent intentDay4 = new Intent(this, Day4Activity.class);
+            startActivity(intentDay4);
+        } else if (getIntent().getStringExtra("from").equals("Day5Activity")) {
+            Intent intentDay5 = new Intent(this, Day5Activity.class);
+            startActivity(intentDay5);
+        } else if (getIntent().getStringExtra("from").equals("Day6Activity")) {
+            Intent intentDay6 = new Intent(this, Day6Activity.class);
+            startActivity(intentDay6);
+        }
+
+    }
 
     // Tyhjentää Trackerin clear-napin klikkauksella
     public void clearClicked(View v) {

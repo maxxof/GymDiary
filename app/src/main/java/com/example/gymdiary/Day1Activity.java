@@ -334,6 +334,7 @@ public class Day1Activity extends AppCompatActivity {
     public void openTracker (View v){
         Intent intent = new Intent(this, Tracker.class);
         intent.putStringArrayListExtra("DIARY", diary);
+        intent.putExtra("from","Day1Activity");
         startActivity(intent);
     }
     public void goBack (View v){
