@@ -10,6 +10,21 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.GymDiary">
         <activity
+            android:name=".Day6Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Day5Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Day4Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Day3Activity"
+            android:exported="true" />
+        <activity
+            android:name=".Day2Activity"
+            android:exported="true" />
+        <activity
             android:name=".Tracker"
             android:exported="true" />
         <activity

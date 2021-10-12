@@ -93,27 +93,27 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void buttonDay2Click(View view) {
-        Intent intentDay2 = new Intent(this, Day1Activity.class);
+        Intent intentDay2 = new Intent(this, Day2Activity.class);
         startActivity(intentDay2);
     }
 
     public void buttonDay3Click(View view) {
-        Intent intentDay3 = new Intent(this, Day1Activity.class);
+        Intent intentDay3 = new Intent(this, Day3Activity.class);
         startActivity(intentDay3);
     }
 
     public void buttonDay4Click(View view) {
-        Intent intentDay4 = new Intent(this, Day1Activity.class);
+        Intent intentDay4 = new Intent(this, Day4Activity.class);
         startActivity(intentDay4);
     }
 
     public void buttonDay5Click(View view) {
-        Intent intentDay5 = new Intent(this, Day1Activity.class);
+        Intent intentDay5 = new Intent(this, Day5Activity.class);
         startActivity(intentDay5);
     }
 
     public void buttonDay6Click(View view) {
-        Intent intentDay6 = new Intent(this, Day1Activity.class);
+        Intent intentDay6 = new Intent(this, Day6Activity.class);
         startActivity(intentDay6);
     }
 }

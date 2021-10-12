@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class Day1Activity extends AppCompatActivity {
+public class Day2Activity extends AppCompatActivity {
     private double step;
     private double i = 0;
     private int j = 0;
@@ -19,7 +19,7 @@ public class Day1Activity extends AppCompatActivity {
     public static final ArrayList<String> diary = new ArrayList();
     public static final ArrayList<String> preset = new ArrayList();
 
-    Exercise exercise1 = new Exercise("Deadlift", 2.5, 5, 100);
+    Exercise exercise1 = new Exercise("Bench Press", 2.5, 5, 100);
     Exercise exercise2 = new Exercise("Deadlift", 2.5, 5, 100);
     Exercise exercise3 = new Exercise("Deadlift", 2.5, 5, 100);
     Exercise exercise4 = new Exercise("Deadlift", 2.5, 5, 100);
@@ -30,13 +30,13 @@ public class Day1Activity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.day1activity_main);
+        setContentView(R.layout.day2activity_main);
 
-        Intent intentDay1 = getIntent();
+        Intent intentDay2 = getIntent();
 
 
-        preset.add(0, "Deadlift");
-        preset.add(1, "Bench Press");
+        preset.add(0, "Bench Press");
+        preset.add(1, "Deadlift");
         preset.add(2, "Squats");
         preset.add(3, "Overhead Press");
         preset.add(4, "Curls");
