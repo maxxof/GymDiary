@@ -11,7 +11,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 
-public class Day1Activity extends AppCompatActivity {
+public class Day5Activity extends AppCompatActivity {
     private double step;
     private double i = 0;
     private int j = 0;
@@ -30,9 +30,9 @@ public class Day1Activity extends AppCompatActivity {
 
 
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.day1activity_main);
+        setContentView(R.layout.day5activity_main);
 
-        Intent intentDay1 = getIntent();
+        Intent intentDay5 = getIntent();
 
 
         preset.add(0, "Deadlift");

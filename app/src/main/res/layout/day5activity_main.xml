@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="#BDBABB"
     android:backgroundTint="#16454444"
-    tools:context=".Day1Activity">
+    tools:context=".Day5Activity">
 
     <EditText
         android:id="@+id/editTextEx5name"
