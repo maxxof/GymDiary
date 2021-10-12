@@ -25,7 +25,7 @@ public class Tracker extends AppCompatActivity {
     }
 
     public void goBack(View v) {
-        Intent intent = new Intent(this, MainActivity.class);
+        Intent intent = new Intent(this, Day1Activity.class);
         startActivity(intent);
 
     }

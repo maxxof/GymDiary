@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#BDBABB"
+    android:backgroundTint="#16454444"
+    tools:context=".Day1Activity">
+
+    <EditText
+        android:id="@+id/editTextEx5name"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/ex5weight"
+        app:layout_constraintEnd_toStartOf="@+id/ex5add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex5add"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex5reps"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex5minusReps"
+        app:layout_constraintEnd_toEndOf="@+id/ex5plusReps"
+        app:layout_constraintStart_toStartOf="@+id/ex5minusReps" />
+
+    <TextView
+        android:id="@+id/ex5weight"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex5minusWeight"
+        app:layout_constraintEnd_toEndOf="@+id/ex5plusWeight"
+        app:layout_constraintStart_toStartOf="@+id/ex5minusWeight" />
+
+    <Button
+        android:id="@+id/ex5add"
+        android:layout_width="64dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="addPressed5"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ex4add" />
+
+    <Button
+        android:id="@+id/ex5plusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wPlusPressed5"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex5minusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex5minusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex5DownButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="downPressed5"
+        android:text="Down"
+        app:layout_constraintBottom_toBottomOf="@+id/ex5minusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex5minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex5UpButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="upPressed5"
+        android:text="UP"
+        app:layout_constraintBottom_toTopOf="@+id/ex5DownButton"
+        app:layout_constraintEnd_toStartOf="@+id/ex5minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex5plusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rPlusPressed5"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex5add"
+        app:layout_constraintEnd_toStartOf="@+id/ex5add"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex5minusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wMinusPressed5"
+        android:padding="0dp"
+        android:paddingRight="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex5plusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex5plusWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex5minusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rMinusPressed5"
+        android:padding="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex5plusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex5plusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <EditText
+        android:id="@+id/editTextEx3name"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/ex3weight"
+        app:layout_constraintEnd_toStartOf="@+id/ex3add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex3add"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex3weight"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex3minusWeight"
+        app:layout_constraintEnd_toEndOf="@+id/ex3plusWeight"
+        app:layout_constraintStart_toEndOf="@+id/ex3DownButton" />
+
+    <Button
+        android:id="@+id/ex3add"
+        android:layout_width="64dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="addPressed3"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ex2add" />
+
+    <Button
+        android:id="@+id/ex3minusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rMinusPressed3"
+        android:padding="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex3plusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex3plusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex3plusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wPlusPressed3"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex3minusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex3minusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex3DownButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="downPressed3"
+        android:text="Down"
+        app:layout_constraintBottom_toBottomOf="@+id/ex3minusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex3minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex3UpButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="upPressed3"
+        android:text="UP"
+        app:layout_constraintBottom_toTopOf="@+id/ex3DownButton"
+        app:layout_constraintEnd_toStartOf="@+id/ex3minusWeight"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex3plusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rPlusPressed3"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex3add"
+        app:layout_constraintEnd_toStartOf="@+id/ex3add"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex3minusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wMinusPressed3"
+        android:padding="0dp"
+        android:paddingRight="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex3plusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex3plusWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex3reps"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex3minusReps"
+        app:layout_constraintEnd_toEndOf="@+id/ex3plusReps"
+        app:layout_constraintStart_toStartOf="@+id/ex3minusReps" />
+
+    <EditText
+        android:id="@+id/editTextEx2name"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/ex2weight"
+        app:layout_constraintEnd_toStartOf="@+id/ex2add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex2add"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex2reps"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex2minusReps"
+        app:layout_constraintEnd_toEndOf="@+id/ex2plusReps"
+        app:layout_constraintStart_toStartOf="@+id/ex2minusReps" />
+
+    <TextView
+        android:id="@+id/ex4reps"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex4minusReps"
+        app:layout_constraintEnd_toEndOf="@+id/ex4plusReps"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/ex4minusReps" />
+
+    <Button
+        android:id="@+id/ex4plusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rPlusPressed4"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex4add"
+        app:layout_constraintEnd_toStartOf="@+id/ex4add"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4add"
+        android:layout_width="64dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="addPressed4"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ex3add" />
+
+    <EditText
+        android:id="@+id/editTextEx4name"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/ex4weight"
+        app:layout_constraintEnd_toStartOf="@+id/ex4add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex4add"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4plusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wPlusPressed4"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex4minusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex4minusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4minusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wMinusPressed4"
+        android:padding="0dp"
+        android:paddingRight="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex4plusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex4plusWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4minusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rMinusPressed4"
+        android:padding="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex4plusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex4plusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4DownButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="downPressed4"
+        android:text="Down"
+        app:layout_constraintBottom_toBottomOf="@+id/ex4minusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex4minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex4UpButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="upPressed4"
+        android:text="UP"
+        app:layout_constraintBottom_toTopOf="@+id/ex4DownButton"
+        app:layout_constraintEnd_toStartOf="@+id/ex4minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex4weight"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex4minusWeight"
+        app:layout_constraintEnd_toEndOf="@+id/ex4plusWeight"
+        app:layout_constraintStart_toEndOf="@+id/ex4DownButton" />
+
+    <TextView
+        android:id="@+id/ex2weight"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex2minusWeight"
+        app:layout_constraintEnd_toEndOf="@+id/ex2plusWeight"
+        app:layout_constraintStart_toStartOf="@+id/ex2minusWeight" />
+
+    <Button
+        android:id="@+id/ex2add"
+        android:layout_width="64dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="addPressed2"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ex1add" />
+
+    <Button
+        android:id="@+id/ex2plusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wPlusPressed2"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex2minusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex2minusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex2DownButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="downPressed2"
+        android:text="Down"
+        app:layout_constraintBottom_toBottomOf="@+id/ex2minusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex2minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex2UpButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="upPressed2"
+        android:text="UP"
+        app:layout_constraintBottom_toTopOf="@+id/ex2DownButton"
+        app:layout_constraintEnd_toStartOf="@+id/ex2minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex2plusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rPlusPressed2"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex2add"
+        app:layout_constraintEnd_toStartOf="@+id/ex2add"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex2minusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wMinusPressed2"
+        android:padding="0dp"
+        android:paddingRight="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex2plusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex2plusWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex2minusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rMinusPressed2"
+        android:padding="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex2plusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex2plusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <TextView
+        android:id="@+id/ex1weight"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex1plusWeight"
+        app:layout_constraintStart_toStartOf="@+id/ex1minusWeight" />
+
+    <Button
+        android:id="@+id/ex1plusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wPlusPressed1"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex1minusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex1minusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1minusWeight"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="wMinusPressed1"
+        android:padding="0dp"
+        android:paddingRight="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex1plusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex1plusWeight"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1minusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rMinusPressed1"
+        android:padding="0dp"
+        android:text="-"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex1plusReps"
+        app:layout_constraintEnd_toStartOf="@+id/ex1plusReps"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1plusReps"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="rPlusPressed1"
+        android:padding="0dp"
+        android:text="+"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        app:iconPadding="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ex1add"
+        app:layout_constraintEnd_toStartOf="@+id/ex1add"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1add"
+        android:layout_width="64dp"
+        android:layout_height="128dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="16dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="addPressed1"
+        android:text="Add"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/ex1reps"
+        android:layout_width="72dp"
+        android:layout_height="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="#EDE7F6"
+        android:text="TextView"
+        android:textAlignment="center"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/ex1minusReps"
+        app:layout_constraintEnd_toEndOf="@+id/ex1plusReps"
+        app:layout_constraintStart_toEndOf="@+id/ex1plusWeight" />
+
+    <EditText
+        android:id="@+id/editTextEx1name"
+        android:layout_width="291dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="14dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="Name"
+        app:layout_constraintBottom_toTopOf="@+id/ex1weight"
+        app:layout_constraintEnd_toStartOf="@+id/ex1add"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex1add"
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1DownButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="downPressed1"
+        android:text="Down"
+        app:layout_constraintBottom_toBottomOf="@+id/ex1minusWeight"
+        app:layout_constraintEnd_toStartOf="@+id/ex1minusWeight"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ex1minusWeight"
+        app:layout_constraintVertical_bias="1.0"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/ex1UpButton"
+        android:layout_width="129dp"
+        android:layout_height="37dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="4dp"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:onClick="upPressed1"
+        android:text="UP"
+        app:layout_constraintBottom_toTopOf="@+id/ex1DownButton"
+        app:layout_constraintEnd_toStartOf="@+id/ex1minusWeight"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:ignore="TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/trackerButton"
+        android:layout_width="142dp"
+        android:layout_height="48dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="openTracker"
+        android:text="Tracker"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="80dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginBottom="10dp"
+        android:onClick="goBack"
+        android:text="@string/back"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ex1Group"
+        android:layout_width="373dp"
+        android:layout_height="132dp"
+        app:constraint_referenced_ids="ex1plusWeight,ex1minusWeight,ex1minusReps,ex1plusReps,ex1add,ex1reps,editTextEx1name,ex1DownButton,ex1UpButton,ex1weight"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="17dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ex2Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ex2UpButton,ex2plusReps,ex2minusReps,ex2minusWeight,ex2add,ex2reps,ex2weight,ex2DownButton,ex2plusWeight,editTextEx2name"
+        tools:layout_editor_absoluteX="41dp"
+        tools:layout_editor_absoluteY="121dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ex3Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ex3UpButton,ex3minusWeight,ex3add,ex3reps,ex3DownButton,ex3plusReps,editTextEx3name,ex3minusReps,ex3plusWeight,ex3weight"
+        tools:layout_editor_absoluteX="139dp"
+        tools:layout_editor_absoluteY="340dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ex4Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ex4reps,ex4plusReps,ex4add,ex4plusWeight,editTextEx4name,ex4minusWeight,ex4minusReps,ex4DownButton,ex4UpButton,ex4weight"
+        tools:layout_editor_absoluteX="187dp"
+        tools:layout_editor_absoluteY="490dp" />
+
+    <androidx.constraintlayout.widget.Group
+        android:id="@+id/ex5Group"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:constraint_referenced_ids="ex5plusReps,ex5minusWeight,ex5plusWeight,ex5add,ex5minusReps,editTextEx5name,ex5DownButton,ex5weight,ex5UpButton,ex5reps"
+        tools:layout_editor_absoluteX="170dp"
+        tools:layout_editor_absoluteY="627dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

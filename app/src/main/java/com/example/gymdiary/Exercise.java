@@ -8,7 +8,6 @@ public class Exercise {
 
     public Exercise(String name, double step, int reps, double weight) {
         this.name = name;
-        // units is useless we only do kg for now, if we have time we add more units
         this.step = step;
         this.reps = reps;
         this.weight = weight;
