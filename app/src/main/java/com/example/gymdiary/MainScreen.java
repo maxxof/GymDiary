@@ -12,10 +12,16 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+import java.lang.reflect.Type;
+import java.util.ArrayList;
 
 public class MainScreen extends AppCompatActivity {
     private FloatingActionButton floatingButtonPlus, floatingButtonMinus;
     private Button buttonDay1, buttonDay2, buttonDay3, buttonDay4, buttonDay5, buttonDay6;
+    ArrayList<Button> dayButtonList;
     private EditText et;
     private View v;
     private TextView textViewNameSession;
@@ -35,7 +41,10 @@ public class MainScreen extends AppCompatActivity {
         setContentView(R.layout.activity_main_screen);
         Intent intentMainScreen = getIntent();
 
+        loadData();
+
         floatingButtonPlus = findViewById(R.id.floatingButtonPlus);
+
         floatingButtonMinus= findViewById(R.id.floatingButtonMinus);
         buttonDay1 = findViewById(R.id.buttonDay1);
         buttonDay2 = findViewById(R.id.buttonDay2);
@@ -46,68 +55,47 @@ public class MainScreen extends AppCompatActivity {
 
         et = findViewById(R.id.editTextName);
 
-        buttonDay1.setVisibility(v.INVISIBLE);
-        buttonDay2.setVisibility(v.INVISIBLE);
-        buttonDay3.setVisibility(v.INVISIBLE);
-        buttonDay4.setVisibility(v.INVISIBLE);
-        buttonDay5.setVisibility(v.INVISIBLE);
-        buttonDay6.setVisibility(v.INVISIBLE);
 
-        loadData();
-        updateViews();
-    }
-
-    protected void onStart(){
-        super.onStart();
-        loadData();
 
     }
-    @Override
-    protected void onResume(){
-        super.onResume();
-        saveData();
-    }
+
+
     protected void onPause(){
         super.onPause();
         saveData();
 
     }
-    protected void onStop(){
-        super.onStop();
-        saveData();
-    }
 
-    protected void onRestart(){
-        super.onRestart();
-        saveData();
-    }
 
-    protected void onDestroy(){
-        super.onDestroy();
-    }
+
+
+
 
     public void saveData() {
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
         SharedPreferences.Editor editor = sp.edit();
-
-        editor.putBoolean(BUTTONDAY1, buttonDay1.isCursorVisible());
-
+        Gson gson = new Gson();
+        String json = gson.toJson(dayButtonList);
+        editor.putString("button list", json);
         editor.apply();
-
     }
     public void loadData() {
         SharedPreferences sp = getSharedPreferences(SHARED_PREFS, MODE_PRIVATE);
-        buttonDay1Visible = sp.getBoolean(BUTTONDAY1, true);
-
+        Gson gson = new Gson();
+        String json = sp.getString("button list", null);
+        Type type = new TypeToken<ArrayList<Button>>() {}.getType();
+        dayButtonList = gson.fromJson(json, type);
+        if (dayButtonList == null) {
+                dayButtonList = new ArrayList<>();
+        }
 
     }
-    public void updateViews() {
-        buttonDay1.setCursorVisible(buttonDay1Visible);
 
-    }
+
 
 
     public void plusClick(View view1) {
+        saveData();
 
         if (buttonDay1.getVisibility() == v.INVISIBLE) {
             buttonDay1.setText(et.getText().toString());
@@ -135,6 +123,7 @@ public class MainScreen extends AppCompatActivity {
     }
 
     public void minusClick(View view2) {
+        saveData();
         if (buttonDay6.getVisibility() == v.VISIBLE) {
             buttonDay6.setVisibility(v.INVISIBLE);
         } else if (buttonDay5.getVisibility() == v.VISIBLE) {
