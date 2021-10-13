@@ -42,7 +42,7 @@ public class Tracker extends AppCompatActivity {
 
 
     }
-    // Tallentaa Trackerin sisällön
+    // Tallentaa Trackerin sisallon
     @Override
     public void onStop() {
         super.onStop();
@@ -80,7 +80,7 @@ public class Tracker extends AppCompatActivity {
 
     }
 
-    // Tyhjentää Trackerin clear-napin klikkauksella
+    // Tyhjentaa Trackerin clear-napin klikkauksella
     public void clearClicked(View v) {
         diaryTV.setText("");
     }
