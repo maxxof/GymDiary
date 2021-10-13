@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -25,27 +24,22 @@ public class MainScreen extends AppCompatActivity {
     private EditText et;
     private View v;
     private TextView textViewNameSession;
-    private boolean buttonDay1Visible;
 
     public static final String SHARED_PREFS = "sp";
-    public static final String BUTTONDAY1 = "buttonDay1";
-    public static final String BUTTONDAY2 = "buttonDay2";
-    public static final String BUTTONDAY3 = "buttonDay3";
-    public static final String BUTTONDAY4 = "buttonDay4";
-    public static final String BUTTONDAY5 = "buttonDay5";
-    public static final String BUTTONDAY6 = "buttonDay6";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main_screen);
         Intent intentMainScreen = getIntent();
-
         loadData();
 
-        floatingButtonPlus = findViewById(R.id.floatingButtonPlus);
 
-        floatingButtonMinus= findViewById(R.id.floatingButtonMinus);
+        //floatingButtonPlus = findViewById(R.id.floatingButtonPlus);
+
+
+        //floatingButtonMinus= findViewById(R.id.floatingButtonMinus);
+
         buttonDay1 = findViewById(R.id.buttonDay1);
         buttonDay2 = findViewById(R.id.buttonDay2);
         buttonDay3 = findViewById(R.id.buttonDay3);
@@ -54,9 +48,6 @@ public class MainScreen extends AppCompatActivity {
         buttonDay6 = findViewById(R.id.buttonDay6);
 
         et = findViewById(R.id.editTextName);
-
-
-
     }
 
 
@@ -93,9 +84,9 @@ public class MainScreen extends AppCompatActivity {
 
 
 
-
+    /**
     public void plusClick(View view1) {
-        saveData();
+
 
         if (buttonDay1.getVisibility() == v.INVISIBLE) {
             buttonDay1.setText(et.getText().toString());
@@ -120,10 +111,10 @@ public class MainScreen extends AppCompatActivity {
             buttonDay6.setVisibility(v.VISIBLE);
         }
         saveData();
-    }
-
+    } */
+    /**
     public void minusClick(View view2) {
-        saveData();
+
         if (buttonDay6.getVisibility() == v.VISIBLE) {
             buttonDay6.setVisibility(v.INVISIBLE);
         } else if (buttonDay5.getVisibility() == v.VISIBLE) {
@@ -138,7 +129,7 @@ public class MainScreen extends AppCompatActivity {
             buttonDay1.setVisibility(v.INVISIBLE);
         }
         saveData();
-    }
+    } */
 
     public void buttonDay1Click(View view) {
         Intent intentDay1 = new Intent(this, Day1Activity.class);
