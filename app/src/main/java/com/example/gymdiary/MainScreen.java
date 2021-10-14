@@ -35,10 +35,6 @@ public class MainScreen extends AppCompatActivity {
         loadData();
 
 
-        //floatingButtonPlus = findViewById(R.id.floatingButtonPlus);
-
-
-        //floatingButtonMinus= findViewById(R.id.floatingButtonMinus);
 
         buttonDay1 = findViewById(R.id.buttonDay1);
         buttonDay2 = findViewById(R.id.buttonDay2);
@@ -84,7 +80,7 @@ public class MainScreen extends AppCompatActivity {
 
 
 
-    /**
+
     public void plusClick(View view1) {
 
 
@@ -111,8 +107,8 @@ public class MainScreen extends AppCompatActivity {
             buttonDay6.setVisibility(v.VISIBLE);
         }
         saveData();
-    } */
-    /**
+    }
+
     public void minusClick(View view2) {
 
         if (buttonDay6.getVisibility() == v.VISIBLE) {
@@ -129,7 +125,7 @@ public class MainScreen extends AppCompatActivity {
             buttonDay1.setVisibility(v.INVISIBLE);
         }
         saveData();
-    } */
+    }
 
     public void buttonDay1Click(View view) {
         Intent intentDay1 = new Intent(this, Day1Activity.class);
