@@ -28,7 +28,10 @@
             android:name=".Tracker"
             android:exported="true" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Day1Activity"
+            android:exported="true" />
+        <activity
+            android:name=".MainScreen"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
